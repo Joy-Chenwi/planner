@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0t;
+    background: #eeeeee;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: lighter;
+}
+
+.center {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.center>a {
+    text-decoration: none;
+    font-size: 60px;
+    color: black;
+}
+
+.center>a:hover {
+    cursor: pointer;
+    background: #ddd;
+    opacity: .8;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="calendar.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sideline">
+            <div class="task">
+                <button>Event</button>
+                <button>Meeting</button>
+            </div>
+            <div class="placeholder">
+                <input type="text" placeholder="Add a title for the event" class="add-event">
+                <div class="settings">
+                    <div class="span">
+                        <p>Date and Time</p>
+                        <p> Everyday? </p>
+                    </div>
+                    <div class="span">
+                        <p> On </p>
+                        <input type="date">
+                    </div>
+                    <div class="span">
+                        <p>From</p>
+                        <input type="time">
+                    </div>
+                    <div class="span">
+                        <p> To </p>
+                        <input type="time">
+                    </div>
+                </div>
+                <button class="event-btn"> Add Event </button>
+            </div>
+        </div>
+        <div class="calendar">
+            <div class="live-update">
+                <h3> Month/year </h3>
+                <h3 class="forth-and-back">
+                    <button>
+                        < </button>
+                            <button> > </button>
+                </h3>
+            </div>
+            <table id="">
+                <thead>
+                    <tr>
+                        <th> Sun </th>
+                        <th> Mon </th>
+                        <th> Tue </th>
+                        <th> Wed </th>
+                        <th> Thu </th>
+                        <th> Fri </th>
+                        <th> Sat </th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = date.getMonth();
+
+        const generateCalendar = (year, month) => {
+            const firstDay = new Date(year, month, 1);
+            const firstDayOfTheWeek = firstDay.getDay();
+
+            const lastDay = new Date(year, month + 1, 0);
+            const lastDate = lastDay.getDay();
+
+
+
+            const calendar = document.getElementById("calendar-body");
+            calendar.innerHTML = "";
+
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement("tr");
+
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement("td");
+                    const date = new Date(year, month, 1 + i * 7 + j - firstDayOfTheWeek);
+
+                    if (date.getMonth() === month) {
+                        cell.textContent = date.getDate();
+                    }
+
+                    row.appendChild(cell);
+                }
+                calendar.appendChild(row);
+            }
+        }
+
+        generateCalendar(year, month);
+    </script>
+</body>
+
+</html>
