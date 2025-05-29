@@ -37,7 +37,7 @@
         </div>
         <div class="calendar">
             <div class="live-update">
-                <h3> Month/year </h3>
+                <h3 id="date-year"> Month/year </h3>
                 <h3 class="forth-and-back">
                     <button>
                         < </button>
@@ -64,6 +64,7 @@
 
     <script>
         const date = new Date();
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const year = date.getFullYear();
         const month = date.getMonth();
 
@@ -76,6 +77,8 @@
 
 
 
+            const dayYear = document.getElementById("date-year");
+            dayYear.innerHTML = `${days[date.getDay()]}/${year}`;
             const calendar = document.getElementById("calendar-body");
             calendar.innerHTML = "";
 

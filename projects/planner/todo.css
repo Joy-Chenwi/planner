@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container>.todo {
+    width: 80%;
+    height: 100%;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+}
+
+.container>.todo>.todo-inputs-tools {
+    width: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.container>.todo>.todo-inputs-tools>input {
+    width: 80%;
+    border-top: none;
+    border-left: none;
+    border-left: none;
+    outline: none;
+    background: none;
+    border-bottom: 2px solid black;
+    font-size: larger;
+}
