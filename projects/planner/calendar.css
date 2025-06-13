@@ -1,0 +1,117 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 30% auto;
+}
+
+.sideline {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sideline>.task {
+    background: #eee;
+    width: 35%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sideline>.placeholder {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%
+}
+
+.sideline>.placeholder>.add-event {
+    width: 95%;
+    padding: 4px;
+    border-radius: 10px;
+    font-size: larger;
+}
+
+.sideline>.placeholder>.settings>.span>input {
+    font-size: larger;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.event-btn {
+    font-size: larger;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.sideline>.placeholder>.settings {
+    width: 100%;
+}
+
+.sideline>.placeholder>.settings>.span {
+    display: flex;
+    margin: 15px 0;
+    justify-content: space-between;
+    align-content: center;
+    height: 35px;
+}
+
+.sideline>.task>button {
+    background: none;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+.calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.calendar>.live-update {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 35%;
+}
+
+.calendar>table {
+    width: 40%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+.forth-and-back {
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    box-shadow: 3px 3px 2px #020332;
+}
+
+h3>button {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+h3>button:hover {
+    cursor: pointer;
+    font-weight: bolder;
+}

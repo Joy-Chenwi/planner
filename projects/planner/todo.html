@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./todo.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1> To Do </h1>
+        <div class="todo">
+            <div class="todo-inputs-tools">
+                <input class="todo-input" id="todo-input" placeholder="Add task">
+                <button id="add-btn"> add </button>
+            </div>
+
+            <ul class="todos" id="todos">
+            </ul>
+        </div>
+    </div>
+
+    <script defer>
+        const todoItems = [];
+        const todoUl = document.getElementById("todos");
+        const todoInput = document.getElementById("todo-input");
+        const addBtn = document.getElementById("add-btn");
+
+        const createTodo = () => {
+            if (todoInput.value.trim()) {
+                const mainDiv = document.createElement("div");
+                const checkbox = document.createElement("input");
+                const listItem = document.createElement("li");
+
+                mainDiv.classList.add("wrapper");
+                checkbox.classList.add("checkbox");
+                checkbox.setAttribute("type", "checkbox");
+
+                listItem.innerText = todoInput.value;
+
+                mainDiv.appendChild(checkbox);
+                mainDiv.appendChild(listItem);
+                todoUl.appendChild(mainDiv);
+                todoInput.value = "";
+            }
+        }
+
+        const checkboxes = document.getElementsByClassName("checkbox");
+
+        const markAsDone = () => {
+            console.log("the guy is somehow clicking");
+        }
+
+        console.log(checkboxes);
+        // checkboxes.addEventListener("click", markAsDone);
+        addBtn.addEventListener("click", createTodo);
+    </script>
+</body>
+
+</html>
